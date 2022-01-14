@@ -12,8 +12,6 @@ function WorkResponsibilities(props) {
     [`${jobNumber}_${respNum}`]: Resp,
   });
 
-  console.log(respList);
-
   const addWork = (e) => {
     setRespList((prevRespList) => ({
       ...prevRespList,
@@ -32,9 +30,6 @@ function WorkResponsibilities(props) {
       },
     }));
   };
-
-  // respList[0].value =
-  //   "Involved in the implementation of the new feature on Chrome.";
 
   return (
     <React.Fragment>
