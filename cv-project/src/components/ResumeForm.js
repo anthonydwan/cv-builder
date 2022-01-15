@@ -1,7 +1,7 @@
 import React from "react";
 import PersonalDetails from "./FormComponents/PersonalDetails";
 import Description from "./FormComponents/Description";
-import WorkExp from "./FormComponents/WorkExp";
+import WorkExp from "./FormComponents/Work";
 import Education from "./FormComponents/Education";
 import OtherInfo from "./FormComponents/OtherInfo";
 

@@ -1,5 +1,4 @@
 import React from "react";
-import uniqid from "uniqid";
 
 function RenderTextInput(props) {
   const { index, passedObj, handler } = props;

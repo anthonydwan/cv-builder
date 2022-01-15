@@ -12,12 +12,21 @@ function WorkResponsibilities(props) {
     [`${jobNumber}_${respNum}`]: Resp,
   });
 
-  const addWork = (e) => {
+  const addResp = () => {
     setRespList((prevRespList) => ({
       ...prevRespList,
       [`${jobNumber}_${respNum + 1}`]: Resp,
     }));
     addRespNum((prevJobNum) => prevJobNum + 1);
+  };
+
+  const removeResp = (e) => {
+    const currResp = e.target.previousElementSibling;
+    const [_, jobIndex, respIndex] = currResp.name.split("_");
+    const newObj = {};
+    Object.assign(newObj, respList);
+    delete newObj[`${jobIndex}_${respIndex}`];
+    setRespList(newObj);
   };
 
   const handleChange = (e) => {
@@ -31,20 +40,22 @@ function WorkResponsibilities(props) {
     }));
   };
 
-
-  sdfsdfsdf
-
   return (
     <React.Fragment>
-      {Object.keys(respList).map((key, index) => (
-        <input
-          placeholder={respList[key].placeholder}
-          value={respList[key].value}
-          onChange={handleChange}
-          name={`Resp_${jobNumber}_${index}`}
-        />
+      {Object.keys(respList).map((key) => (
+        <div key={`Resp_${key}`}>
+          <textarea
+            placeholder={respList[key].placeholder}
+            value={respList[key].value}
+            onChange={handleChange}
+            name={`Resp_${key}`}
+          />
+          <button type="button" onClick={removeResp}>
+            remove
+          </button>
+        </div>
       ))}
-      <button type="button" onClick={addWork}>
+      <button type="button" onClick={addResp}>
         Add
       </button>
     </React.Fragment>

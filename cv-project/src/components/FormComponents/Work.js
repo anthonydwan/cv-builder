@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import uniqid from "uniqid";
-import WorkResponsibilities from "./WorkResponsibilities";
+import WorkResp from "./WorkResp";
 import RenderTextInput from "./RenderTextInput";
 
 function WorkExp() {
@@ -66,15 +65,14 @@ function WorkExp() {
 
   return (
     <div>
-      {Object.keys(workList).map((key, index) => (
-        <div>
+      {Object.keys(workList).map((key) => (
+        <div className="workExp--block" key={key}>
           <RenderTextInput
-            key={index}
             passedObj={workList[key]}
             handler={handleChange}
-            index={index}
+            index={key}
           />
-          <WorkResponsibilities jobNumber={index} />
+          <WorkResp jobNumber={key} />
         </div>
       ))}
       <button type="button" onClick={addWork}>
