@@ -1,7 +1,8 @@
 import React from "react";
 
 function DotPoint(props) {
-  const { dotptList, addHandler, removeHandler, changeHandler } = props;
+  const { subsection, dotptList, addHandler, removeHandler, changeHandler } =
+    props;
 
   return (
     <React.Fragment>
@@ -14,12 +15,12 @@ function DotPoint(props) {
             name={`Resp_${key}`}
           />
           <button type="button" onClick={removeHandler}>
-            Remove Responsibility
+            Remove {subsection}
           </button>
         </div>
       ))}
       <button type="button" onClick={addHandler}>
-        Add Responsibility
+        Add {subsection}
       </button>
     </React.Fragment>
   );

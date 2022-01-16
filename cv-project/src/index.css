@@ -12,7 +12,7 @@ code {
     monospace;
 }
 
-.workExp--block {
+.card--block {
   border: 1px solid blue;
   margin: 1em;
   padding: 1em;

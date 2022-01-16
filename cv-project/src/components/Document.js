@@ -1,7 +1,7 @@
 import React from "react";
 
 function Document() {
-  return <div id="renderDoc">Wowwowow</div>;
+  return <div>Wowwowow</div>;
 }
 
 export default Document;
