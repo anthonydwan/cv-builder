@@ -2,32 +2,34 @@ import React, { Component } from "react";
 import RenderTextInput from "./RenderTextInput";
 
 export class PersonalDetails extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
-      pName: {
+      personalName: {
         placeholder: "Full Name",
         value: "John Jones",
       },
-      pPhone: {
+      personalPhone: {
         placeholder: "Phone Number",
         value: "+61 412 345 678",
       },
-      pLocation: {
+      personalLocation: {
         placeholder: "Location",
         value: "Sydney, AU",
       },
-      pEmail: {
+      personalEmail: {
         placeholder: "Email",
         value: "john.jones@jmail.com",
       },
     };
   }
 
+
+
   handleChange = (e) => {
     this.setState({
       [e.target.id]: {
-        placeholder: this.state[e.target.id].placeholder,
+        ...this.state,
         value: e.target.value,
       },
     });
@@ -35,13 +37,18 @@ export class PersonalDetails extends Component {
 
   render() {
     return (
-      <div>
+      <React.Fragment>
         <RenderTextInput
-          required={true}
+          index={0}
           passedObj={this.state}
           handler={this.handleChange}
         />
-      </div>
+        <textarea
+          onChange={this.handleChange}
+          placeholder="A short description about yourself"
+          value="A software developer who is passionate about delivering the highest quality work and is always looking to improve, adapt and innovate."
+        ></textarea>
+      </React.Fragment>
     );
   }
 }

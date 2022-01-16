@@ -18,4 +18,5 @@ code {
   padding: 1em;
   border-radius: 1em;
   background-color: rgb(9, 47, 59);
+  width: min(80vw, 900px);
 }

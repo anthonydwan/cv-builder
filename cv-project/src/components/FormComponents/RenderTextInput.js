@@ -4,7 +4,7 @@ function RenderTextInput(props) {
   const { index, passedObj, handler } = props;
 
   return (
-    <div>
+    <React.Fragment>
       {Object.keys(passedObj).map((category) => {
         return (
           <input
@@ -18,7 +18,7 @@ function RenderTextInput(props) {
           ></input>
         );
       })}
-    </div>
+    </React.Fragment>
   );
 }
 
