@@ -12,6 +12,21 @@ code {
     monospace;
 }
 
+.App {
+  display: flex;
+  gap: 2em;
+}
+
+.view--block {
+  border: 1px solid darkgray;
+  aspect-ratio: 1 / 1.4142;
+  height: min(85vh, 1600px);
+  width: auto;
+  padding: 2em;
+  margin: 1em;
+  background: whitesmoke;
+}
+
 .card--block {
   border: 1px solid blue;
   margin: 1em;

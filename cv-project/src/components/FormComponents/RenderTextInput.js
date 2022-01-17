@@ -15,6 +15,7 @@ function RenderTextInput(props) {
             onChange={handler}
             value={passedObj[category].value}
             placeholder={passedObj[category].placeholder}
+            data-prim-num={index}
           ></input>
         );
       })}
