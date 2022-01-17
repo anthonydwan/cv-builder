@@ -11,7 +11,7 @@ function DotPoint(props) {
   } = props;
 
   const selectSubsection = (cardIndex, key) => {
-    const [leadingCardNum, _] = key.split("_");
+    const [leadingCardNum, subNum] = key.split("_");
     if (cardIndex === leadingCardNum) {
       return (
         <div key={`${subsection}_${key}`}>
@@ -20,8 +20,15 @@ function DotPoint(props) {
             value={dotptList[key].value}
             onChange={changeHandler}
             name={`${subsection}_${key}`}
+            data-prim-num={cardIndex}
+            data-sub-num={subNum}
           />
-          <button type="button" onClick={removeHandler}>
+          <button
+            type="button"
+            onClick={removeHandler}
+            data-prim-num={cardIndex}
+            data-sub-num={subNum}
+          >
             Remove {subsection}
           </button>
         </div>
@@ -32,7 +39,7 @@ function DotPoint(props) {
   return (
     <React.Fragment>
       {Object.keys(dotptList).map((key) => selectSubsection(cardIndex, key))}
-      <button type="button" onClick={addHandler}>
+      <button type="button" onClick={addHandler} data-prim-num={cardIndex}>
         Add {subsection}
       </button>
     </React.Fragment>

@@ -34,7 +34,8 @@ function App() {
   };
 
   const handleChangeCard = (e, setter) => {
-    const [inputBox, cardIndex] = e.target.name.split("_");
+    const inputBox = e.target.getAttribute("data-section");
+    const cardIndex = e.target.getAttribute("data-prim-num");
     setter((prevList) => ({
       ...prevList,
       [cardIndex]: {
@@ -48,8 +49,7 @@ function App() {
   };
 
   const handleRemoveCard = (e, currList, setter) => {
-    const cardIndex = e.target.parentNode.getAttribute("data-prim-num");
-    // const [_, cardIndex] = currWorkName.split("_");
+    const cardIndex = e.target.getAttribute("data-prim-num");
     const newObj = {};
     Object.assign(newObj, currList);
     delete newObj[`${cardIndex}`];
@@ -57,9 +57,7 @@ function App() {
   };
 
   const HandleAddDP = (e, dpNum, dpSetter, dpCounter, dpTemplate) => {
-    const cardIndex = e.target.parentNode
-      .getAttribute("data-prim-num")
-      .split("_");
+    const cardIndex = e.target.getAttribute("data-prim-num");
     dpSetter((prevDPList) => ({
       ...prevDPList,
       [`${cardIndex}_${dpNum + 1}`]: dpTemplate,
@@ -68,8 +66,8 @@ function App() {
   };
 
   const HandleRemoveDP = (e, currDPList, dpSetter) => {
-    const currDP = e.target.previousElementSibling;
-    const [_, cardIndex, dpIndex] = currDP.name.split("_");
+    const cardIndex = e.target.getAttribute("data-prim-num");
+    const dpIndex = e.target.getAttribute("data-sub-num");
     const newObj = {};
     Object.assign(newObj, currDPList);
     delete newObj[`${cardIndex}_${dpIndex}`];
@@ -77,7 +75,8 @@ function App() {
   };
 
   const HandleChangeDP = (e, dpSetter) => {
-    const [_, cardIndex, dpIndex] = e.target.name.split("_");
+    const cardIndex = e.target.getAttribute("data-prim-num");
+    const dpIndex = e.target.getAttribute("data-sub-num");
     dpSetter((prevDPList) => ({
       ...prevDPList,
       [`${cardIndex}_${dpIndex}`]: {

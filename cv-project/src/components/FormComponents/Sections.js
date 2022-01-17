@@ -8,28 +8,27 @@ function RenderCard(props) {
 
   return (
     <React.Fragment>
-      {Object.keys(cardList).map((key) => (
+      {Object.keys(cardList).map((cardIndex) => (
         <div
           className={`${sectionName}--block card--block`}
-          key={`${sectionName}_${key}`}
-          data-name={`${sectionName}_${key}`}
-          data-prim-num={key}
+          key={`${sectionName}_${cardIndex}`}
+          data-section={sectionName}
+          data-prim-num={cardIndex}
         >
           <RenderTextInput
-            passedObj={cardList[key]}
+            passedObj={cardList[cardIndex]}
             handler={changeCard}
-            index={key}
-
+            index={cardIndex}
           />
           <DotPoint
-            cardIndex={key}
+            cardIndex={cardIndex}
             subsection={subsecName}
             dotptList={dpList}
             addHandler={addDP}
             removeHandler={removeDP}
             changeHandler={changeDP}
           />
-          <button type="button" onClick={removeCard}>
+          <button type="button" onClick={removeCard} data-prim-num={cardIndex}>
             Remove {`${sectionName}`}
           </button>
         </div>
