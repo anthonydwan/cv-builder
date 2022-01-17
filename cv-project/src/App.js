@@ -34,7 +34,7 @@ function App() {
   };
 
   const handleChangeCard = (e, setter) => {
-    const inputBox = e.target.getAttribute("data-section");
+    const inputBox = e.target.getAttribute("data-input");
     const cardIndex = e.target.getAttribute("data-prim-num");
     setter((prevList) => ({
       ...prevList,

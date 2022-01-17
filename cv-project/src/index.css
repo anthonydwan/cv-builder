@@ -1,3 +1,8 @@
+:root {
+  --cv-width: clamp(600px, 800px, 1200px);
+  --cv-b: var(--cv-width);
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -17,14 +22,30 @@ code {
   gap: 2em;
 }
 
-.view--block {
+.view--CV {
   border: 1px solid darkgray;
-  aspect-ratio: 1 / 1.4142;
-  height: min(85vh, 1600px);
-  width: auto;
-  padding: 2em;
+  /* 1.4142; */
+  width: var(--cv-b);
+  aspect-ratio: 1 / 1.412;
+  padding: 3% 5%;
   margin: 1em;
   background: whitesmoke;
+}
+
+.view-allContent {
+  margin: 10px 30px;
+  height: 100%;
+  width: 100%;
+}
+
+.view--titleBlock {
+  display: flex;
+  justify-content: space-between;
+}
+
+.view--institution {
+  font-size: 1em;
+  font-weight: 500;
 }
 
 .card--block {
