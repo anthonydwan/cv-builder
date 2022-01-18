@@ -107,7 +107,7 @@ const initWork = {
   },
   end: {
     placeholder: "End Date",
-    value: "Feb 2022",
+    value: "Present",
   },
 };
 
