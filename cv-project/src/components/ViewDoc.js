@@ -121,7 +121,6 @@ function ViewDoc(props) {
               <span>{otherList[key].end.value} </span>
             </div>
           </div>
-
           {Object.keys(otherDescList).map((subKey) =>
             selectSubs(otherDescList, key, subKey)
           )}

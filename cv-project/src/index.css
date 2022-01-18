@@ -65,10 +65,11 @@ code {
   font-weight: 400;
 }
 .formClass {
+  position: relative;
   background: rgb(223, 221, 221);
   text-align: center;
   padding: 1em;
-  min-height: 600px;
+  min-height: 400px;
 }
 
 .form--subsection-div {
@@ -83,6 +84,7 @@ code {
 
 .form--subsection--removeB {
   width: 35px;
+  margin-top: 4px;
   margin-left: 5px;
   height: 35px;
   align-self: center;
@@ -139,9 +141,18 @@ code {
 
 input {
   width: 650px;
-  border: none;
+  border: 1px solid rgb(211, 211, 211);
   box-sizing: border-box;
   margin-top: 4px;
+  min-height: 20px;
+  border-radius: 0.25em;
+  outline: none;
+  transition: all cubic-bezier(1, 0, 0, 1) 0.2s;
+}
+
+input:focus {
+  border: 1px solid rgb(51, 122, 128);
+  transition: all cubic-bezier(1, 0, 0, 1) 0.2s;
 }
 
 textarea {
@@ -150,8 +161,15 @@ textarea {
   box-sizing: border-box;
   width: 650px;
   resize: vertical;
-  border: none;
+  border: 1px solid rgb(211, 211, 211);
   font-family: Arial, Helvetica, sans-serif;
+  outline: none;
+  transition: all cubic-bezier(1, 0, 0, 1) 0.2s;
+}
+
+textarea:focus {
+  border: 1px solid rgb(51, 122, 128);
+  transition: all cubic-bezier(1, 0, 0, 1) 0.2s;
 }
 
 p {
@@ -172,4 +190,26 @@ li {
 
 .card--personalDetail {
   padding-top: 15px;
+}
+
+.form--pageButtons--div {
+  margin-left: 10px;
+  width: 680px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.pageButtons {
+  border: none;
+  height: 30px;
+  width: 45px;
+  font-family: "Kodchasan", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.pageButtons--hidden {
+  display: none;
 }

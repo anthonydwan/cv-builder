@@ -17,6 +17,12 @@ function ResumeForm(props) {
     if (currPage > 0) setPage((prevPage) => prevPage - 1);
   };
 
+  const backButtonRender = () =>
+    currPage > 0 ? "pageButtons" : "pageButtons--hidden";
+
+  const nextButtonRender = () =>
+    currPage < 3 ? "pageButtons" : "pageButtons--hidden";
+
   const runCurrPage = (currPage) => {
     switch (currPage) {
       case 0:
@@ -60,15 +66,30 @@ function ResumeForm(props) {
   return (
     <div id="formDiv">
       <form className="formClass">
-        {runCurrPage(currPage)}
-        <div className="form--pageButtons">
-          <button type="button" onClick={backPage}>
-            Back
-          </button>
-          <button type="button" onClick={nextPage}>
-            Next
-          </button>
+        <div className="form--pageButtons--div">
+          <div>
+            {" "}
+            <button
+              className={backButtonRender()}
+              type="button"
+              onClick={backPage}
+            >
+              &lt;
+            </button>
+          </div>
+          <div>
+            {" "}
+            <button
+              className={nextButtonRender()}
+              type="button"
+              onClick={nextPage}
+            >
+              &gt;
+            </button>
+          </div>
         </div>
+
+        {runCurrPage(currPage)}
       </form>
     </div>
   );

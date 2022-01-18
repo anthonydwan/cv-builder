@@ -133,11 +133,11 @@ const personal = {
   },
   personalLinkedIn: {
     placeholder: "Linkedin",
-    value: "www.linkedin.com/fake_profile",
+    value: "www.linkedin.com/abc",
   },
   personalPortfolio: {
     placeholder: "Portfolio",
-    value: "www.myfakegithub_portfolio.com",
+    value: "www.abc_portfolio.com",
   },
 };
 
