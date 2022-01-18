@@ -31,7 +31,7 @@ function ViewDoc(props) {
   const otherTitle = (
     <div className="view--personal--info--section">
       <EmojiEventsIcon className="svg" sx={{ fontSize: 22 }} />
-      <span>ACHIEVEMENTS, ETC.</span>
+      <span>ACHIEVEMENTS & EXTRACURRICULAR</span>
     </div>
   );
 

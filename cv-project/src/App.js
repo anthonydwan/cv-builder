@@ -249,6 +249,8 @@ function App() {
   const personList = { initPerson, initPersonDesc };
 
   return (
+    <div>
+      <div className="webTitle">CV Builder</div>
     <div className="App">
       <ResumeForm
         personSection={personState}
@@ -263,6 +265,8 @@ function App() {
         otherSection={otherLists}
       />
     </div>
+    </div>
+
   );
 }
 

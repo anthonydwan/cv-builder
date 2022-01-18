@@ -1,4 +1,5 @@
 import React from "react";
+import uniqid from "uniqid";
 
 function ViewRender(props) {
   const { title, sectionList, subsectionList, int, detail } = props;
@@ -27,7 +28,11 @@ function ViewRender(props) {
     );
     const DPcount = currSectionSubKeys.length;
     if (DPcount === 1) {
-      return <p className="view--subsection">{subsectionList[subKey].value}</p>;
+      return (
+        <p key={uniqid()} className="view--subsection">
+          {subsectionList[subKey].value}
+        </p>
+      );
     } else if (
       currSectionSubKeys
         .map(
@@ -40,7 +45,7 @@ function ViewRender(props) {
       return null;
     } else {
       return (
-        <ul>
+        <ul key={uniqid()}>
           <li className="view--subsection">{subsectionList[subKey].value}</li>
         </ul>
       );
@@ -48,13 +53,12 @@ function ViewRender(props) {
   };
 
   const conditionalHeading = (sectionList) => {
-    console.log(sectionList);
     if (
       Object.keys(sectionList)
         .map(
           (key) =>
             sectionList[key][int].value === undefined ||
-            sectionList[key][int].value == ""
+            sectionList[key][int].value === ""
         )
         .some((e) => e === false)
     ) {
@@ -75,29 +79,27 @@ function ViewRender(props) {
       sectionList[key][int].value !== ""
     ) {
       return (
-        <React.Fragment>
-          <div className="view--section">
-            <div className="view--titleBlock">
-              <div>
-                <span className="view--section">
-                  {sectionList[key][int].value}
-                </span>
-                {", "}
-                <span className="view--section">
-                  {sectionList[key][detail].value}
-                </span>
-              </div>
-              <div>
-                <span>{sectionList[key].start.value} </span>
-                {conditionalDate(sectionList[key])}
-                <span>{sectionList[key].end.value} </span>
-              </div>
+        <div className="view--section" key={uniqid()}>
+          <div className="view--titleBlock">
+            <div>
+              <span className="view--section">
+                {sectionList[key][int].value}
+              </span>
+              {", "}
+              <span className="view--section">
+                {sectionList[key][detail].value}
+              </span>
             </div>
-            {Object.keys(subsectionList).map((subKey) =>
-              selectSubs(subsectionList, key, subKey)
-            )}
+            <div>
+              <span>{sectionList[key].start.value} </span>
+              {conditionalDate(sectionList[key])}
+              <span>{sectionList[key].end.value} </span>
+            </div>
           </div>
-        </React.Fragment>
+          {Object.keys(subsectionList).map((subKey) =>
+            selectSubs(subsectionList, key, subKey)
+          )}
+        </div>
       );
     }
   };
