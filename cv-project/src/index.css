@@ -28,7 +28,6 @@ code {
   border: 1px solid darkgray;
   /* 1.4142; */
   width: 700px;
-  margin: 12px;
   height: calc(700px * 1.412);
   padding: calc(700px * 1.412 * 1.6 / 29.7) calc(700px * 1.6 / 21);
   background: whitesmoke;
@@ -69,6 +68,7 @@ code {
   background: rgb(223, 221, 221);
   text-align: center;
   padding: 1em;
+  min-height: 600px;
 }
 
 .form--subsection-div {
@@ -124,6 +124,19 @@ code {
   border-bottom-right-radius: 5em;
 }
 
+.form--main--addB {
+  width: 680px;
+  height: 40px;
+  border-radius: 10px;
+  border: none;
+  background-color: rgb(166, 218, 177);
+  font-size: 2em;
+  font-weight: 700;
+  color: rgb(33, 83, 44);
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
 input {
   width: 650px;
   border: none;
@@ -132,6 +145,7 @@ input {
 }
 
 textarea {
+  margin-top: 4px;
   min-height: 35px;
   box-sizing: border-box;
   width: 650px;
@@ -156,3 +170,6 @@ li {
   width: 650px;
 }
 
+.card--personalDetail {
+  padding-top: 15px;
+}

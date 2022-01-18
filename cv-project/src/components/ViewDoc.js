@@ -57,7 +57,7 @@ function ViewDoc(props) {
           <div>{initPerson.personalPortfolio.value}</div>
         </div>
       </div>
-      <h2>WORK</h2>
+      <h2>EXPERIENCE</h2>
       <hr />
       {Object.keys(workList).map((key) => (
         <div className="view--work">

@@ -33,8 +33,8 @@ function RenderCard(props) {
           />
         </div>
       ))}
-      <button type="button" onClick={addCard}>
-        Add {sectionName}
+      <button className="form--main--addB" type="button" onClick={addCard}>
+        +
       </button>
     </React.Fragment>
   );
