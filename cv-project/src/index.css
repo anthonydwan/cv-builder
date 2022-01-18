@@ -56,8 +56,19 @@ code {
 }
 
 .view--personal--info {
+  max-width: 250px;
+  flex-direction: column;
+  display: flex;
   font-size: 0.95em;
   padding-left: 1em;
+  /* justify-content: space-between; */
+}
+
+.view--personal--info--section {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  gap: 4px;
 }
 
 .view--personal--name {

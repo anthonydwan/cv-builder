@@ -10,14 +10,15 @@ import {
   initOther,
   initWork,
   tempResp,
+  initResp,
   tempDesc,
+  initEduDesc,
+  initOtherDesc,
   personal,
-  personalDesc
+  personalDesc,
 } from "./templates";
 
 function App() {
-
-
   const [initPerson, setPerson] = useState(personal);
   const [initPersonDesc, setpersonDesc] = useState(personalDesc);
 
@@ -43,7 +44,6 @@ function App() {
     });
   };
 
-  
   const handleAddCard = (
     template,
     count,
@@ -116,14 +116,14 @@ function App() {
     }));
   };
 
-  const [workNum, addWorkNum] = useState(0);
-  const [workList, setWorkList] = useState({ [workNum]: initWork });
+  const [workNum, addWorkNum] = useState(2);
+  const [workList, setWorkList] = useState(initWork);
 
-  const [eduNum, addEduNum] = useState(0);
-  const [eduList, setEduList] = useState({ [eduNum]: initEdu });
+  const [eduNum, addEduNum] = useState(1);
+  const [eduList, setEduList] = useState(initEdu);
 
-  const [otherNum, addOtherNum] = useState(0);
-  const [otherList, setOtherList] = useState({ [otherNum]: initOther });
+  const [otherNum, addOtherNum] = useState(1);
+  const [otherList, setOtherList] = useState(initOther);
 
   const addWork = () =>
     handleAddCard(
@@ -161,20 +161,14 @@ function App() {
   const changeOther = (e) => handleChangeCard(e, setOtherList);
   const removeOther = (e) => handleRemoveCard(e, otherList, setOtherList);
 
-  const [respNum, addRespNum] = useState(0);
-  const [respList, setRespList] = useState({
-    [`${workNum}_${respNum}`]: tempResp,
-  });
+  const [respNum, addRespNum] = useState(3);
+  const [respList, setRespList] = useState(initResp);
 
-  const [eduDescNum, addEduDescNum] = useState(0);
-  const [eduDescList, setEduDescList] = useState({
-    [`${eduNum}_${eduDescNum}`]: tempDesc,
-  });
+  const [eduDescNum, addEduDescNum] = useState(1);
+  const [eduDescList, setEduDescList] = useState(initEduDesc);
 
-  const [otherDescNum, addOtherDescNum] = useState(0);
-  const [otherDescList, setOtherDescList] = useState({
-    [`${otherNum}_${otherDescNum}`]: tempDesc,
-  });
+  const [otherDescNum, addOtherDescNum] = useState(1);
+  const [otherDescList, setOtherDescList] = useState(initOtherDesc);
 
   const addResp = (e) =>
     HandleAddDP(e, respNum, setRespList, addRespNum, tempResp);
@@ -246,10 +240,13 @@ function App() {
   const otherLists = { otherList, otherDescList };
 
   const personState = {
-    initPerson, initPersonDesc, handlePerson, handleDesc
-  }
+    initPerson,
+    initPersonDesc,
+    handlePerson,
+    handleDesc,
+  };
 
-  const personList = {initPerson, initPersonDesc}
+  const personList = { initPerson, initPersonDesc };
 
   return (
     <div className="App">
@@ -260,7 +257,7 @@ function App() {
         otherSection={otherState}
       />
       <ViewDoc
-        personSection={personList }
+        personSection={personList}
         workSection={workLists}
         eduSection={eduLists}
         otherSection={otherLists}

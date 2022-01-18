@@ -47,44 +47,65 @@ function ViewRender(props) {
     }
   };
 
+  const conditionalHeading = (sectionList) => {
+    console.log(sectionList);
+    if (
+      Object.keys(sectionList)
+        .map(
+          (key) =>
+            sectionList[key][int].value === undefined ||
+            sectionList[key][int].value == ""
+        )
+        .some((e) => e === false)
+    ) {
+      return (
+        <React.Fragment>
+          <h2>{title}</h2>
+          <hr />
+        </React.Fragment>
+      );
+    } else {
+      return null;
+    }
+  };
+
   const conditionalSection = (key) => {
     if (
       sectionList[key][int].value !== undefined &&
       sectionList[key][int].value !== ""
     ) {
       return (
-        <div className="view--section">
-          <div className="view--titleBlock">
-            <div>
-              <span className="view--section">
-                {sectionList[key][int].value}
-              </span>
-              {", "}
-              <span className="view--section">
-                {sectionList[key][detail].value}
-              </span>
+        <React.Fragment>
+          <div className="view--section">
+            <div className="view--titleBlock">
+              <div>
+                <span className="view--section">
+                  {sectionList[key][int].value}
+                </span>
+                {", "}
+                <span className="view--section">
+                  {sectionList[key][detail].value}
+                </span>
+              </div>
+              <div>
+                <span>{sectionList[key].start.value} </span>
+                {conditionalDate(sectionList[key])}
+                <span>{sectionList[key].end.value} </span>
+              </div>
             </div>
-            <div>
-              <span>{sectionList[key].start.value} </span>
-              {conditionalDate(sectionList[key])}
-              <span>{sectionList[key].end.value} </span>
-            </div>
+            {Object.keys(subsectionList).map((subKey) =>
+              selectSubs(subsectionList, key, subKey)
+            )}
           </div>
-          {Object.keys(subsectionList).map((subKey) =>
-            selectSubs(subsectionList, key, subKey)
-          )}
-        </div>
+        </React.Fragment>
       );
     }
   };
 
   return (
     <React.Fragment>
-      <h2>{title}</h2>
-      <hr />
-      {Object.keys(sectionList).map((key) =>
-        conditionalSection(key)
-      )}
+      {conditionalHeading(sectionList)}
+      {Object.keys(sectionList).map((key) => conditionalSection(key))}
     </React.Fragment>
   );
 }

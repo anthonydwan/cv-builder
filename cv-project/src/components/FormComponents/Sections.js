@@ -15,7 +15,12 @@ function RenderCard(props) {
           data-section={sectionName}
           data-prim-num={cardIndex}
         >
-          <button className="form--main--removeB removeB" type="button" onClick={removeCard} data-prim-num={cardIndex}>
+          <button
+            className="form--main--removeB removeB"
+            type="button"
+            onClick={removeCard}
+            data-prim-num={cardIndex}
+          >
             X
           </button>
           <RenderTextInput

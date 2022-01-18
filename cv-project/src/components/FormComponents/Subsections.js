@@ -10,12 +10,6 @@ function DotPoint(props) {
     changeHandler,
   } = props;
 
-  const hoverRemoveStyle = (e) => {
-    const textarea = e.target.previousElementSibling;
-    textarea.classList.remove("form--subsection");
-    textarea.classList.remove("form--subsection");
-  };
-
   const selectSubsection = (cardIndex, key) => {
     const [leadingCardNum, subNum] = key.split("_");
     if (cardIndex === leadingCardNum) {
