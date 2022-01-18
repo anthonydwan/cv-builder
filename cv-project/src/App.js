@@ -11,9 +11,39 @@ import {
   initWork,
   tempResp,
   tempDesc,
+  personal,
+  personalDesc
 } from "./templates";
 
 function App() {
+
+
+  const [initPerson, setPerson] = useState(personal);
+  const [initPersonDesc, setpersonDesc] = useState(personalDesc);
+
+  const handlePerson = (e) => {
+    const category = e.target.getAttribute("data-input");
+    setPerson({
+      ...initPerson,
+      [category]: {
+        ...initPerson[category],
+        value: e.target.value,
+      },
+    });
+  };
+
+  const handleDesc = (e) => {
+    const category = e.target.getAttribute("data-input");
+    setpersonDesc({
+      ...initPersonDesc,
+      [category]: {
+        ...initPersonDesc[category],
+        value: e.target.value,
+      },
+    });
+  };
+
+  
   const handleAddCard = (
     template,
     count,
@@ -215,14 +245,22 @@ function App() {
   const eduLists = { eduList, eduDescList };
   const otherLists = { otherList, otherDescList };
 
+  const personState = {
+    initPerson, initPersonDesc, handlePerson, handleDesc
+  }
+
+  const personList = {initPerson, initPersonDesc}
+
   return (
     <div className="App">
       <ResumeForm
+        personSection={personState}
         workSection={workState}
         eduSection={eduState}
         otherSection={otherState}
       />
       <ViewDoc
+        personSection={personList }
         workSection={workLists}
         eduSection={eduLists}
         otherSection={otherLists}

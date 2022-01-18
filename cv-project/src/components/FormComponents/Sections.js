@@ -15,6 +15,9 @@ function RenderCard(props) {
           data-section={sectionName}
           data-prim-num={cardIndex}
         >
+          <button className="form--main--removeB removeB" type="button" onClick={removeCard} data-prim-num={cardIndex}>
+            X
+          </button>
           <RenderTextInput
             passedObj={cardList[cardIndex]}
             handler={changeCard}
@@ -28,13 +31,10 @@ function RenderCard(props) {
             removeHandler={removeDP}
             changeHandler={changeDP}
           />
-          <button type="button" onClick={removeCard} data-prim-num={cardIndex}>
-            Remove {`${sectionName}`}
-          </button>
         </div>
       ))}
       <button type="button" onClick={addCard}>
-        Add Work
+        Add {sectionName}
       </button>
     </React.Fragment>
   );

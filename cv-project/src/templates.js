@@ -28,11 +28,11 @@ const initEdu = {
   },
   start: {
     placeholder: "Start Date",
-    value: "2019-3",
+    value: "Mar 2019",
   },
   end: {
     placeholder: "End Date",
-    value: "2020-11",
+    value: "Nov 2020",
   },
 };
 
@@ -66,11 +66,11 @@ const initOther = {
   },
   start: {
     placeholder: "Start Date",
-    value: "2019-3",
+    value: "Mar 2019",
   },
   end: {
     placeholder: "End Date",
-    value: "2019-11",
+    value: "Nov 2019",
   },
 };
 
@@ -103,16 +103,51 @@ const initWork = {
   },
   start: {
     placeholder: "Start Date",
-    value: "2021-2",
+    value: "Feb 2021",
   },
   end: {
     placeholder: "End Date",
-    value: "2022-2",
+    value: "Feb 2022",
   },
 };
 
 const tempResp = { placeholder: "Reponsibility" };
 const tempDesc = { placeholder: "Description" };
+
+const personal = {
+  personalName: {
+    placeholder: "Full Name",
+    value: "John Jones",
+  },
+  personalPhone: {
+    placeholder: "Phone Number",
+    value: "+61 412 345 678",
+  },
+  personalLocation: {
+    placeholder: "Location",
+    value: "Sydney, Australia",
+  },
+  personalEmail: {
+    placeholder: "Email",
+    value: "john.jones@jmail.com",
+  },
+  personalLinkedIn: {
+    placeholder: "Linkedin",
+    value: "www.linkedin.com/fake_profile",
+  },
+  personalPortfolio: {
+    placeholder: "Portfolio",
+    value: "www.myfakegithub_portfolio.com",
+  },
+};
+
+const personalDesc = {
+  personalD: {
+    placeholder: "A short description about yourself",
+    value:
+      "I am a software developer who is passionate about delivering the highest quality work and is always looking to improve, adapt and innovate.",
+  },
+};
 
 export {
   tempEdu,
@@ -123,4 +158,6 @@ export {
   initWork,
   tempResp,
   tempDesc,
+  personal,
+  personalDesc,
 };
