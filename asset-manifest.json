@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/anthonydwan/odin_CV_builder/static/css/main.0657e2de.css",
-    "main.js": "/anthonydwan/odin_CV_builder/static/js/main.aff321c5.js",
-    "static/js/787.21e93e1b.chunk.js": "/anthonydwan/odin_CV_builder/static/js/787.21e93e1b.chunk.js",
+    "main.js": "/anthonydwan/odin_CV_builder/static/js/main.4978ba45.js",
+    "static/js/787.fbe344ac.chunk.js": "/anthonydwan/odin_CV_builder/static/js/787.fbe344ac.chunk.js",
     "static/media/github.png": "/anthonydwan/odin_CV_builder/static/media/github.6cbbd58fc788ba1e65a0.png",
     "index.html": "/anthonydwan/odin_CV_builder/index.html",
     "main.0657e2de.css.map": "/anthonydwan/odin_CV_builder/static/css/main.0657e2de.css.map",
-    "main.aff321c5.js.map": "/anthonydwan/odin_CV_builder/static/js/main.aff321c5.js.map",
-    "787.21e93e1b.chunk.js.map": "/anthonydwan/odin_CV_builder/static/js/787.21e93e1b.chunk.js.map"
+    "main.4978ba45.js.map": "/anthonydwan/odin_CV_builder/static/js/main.4978ba45.js.map",
+    "787.fbe344ac.chunk.js.map": "/anthonydwan/odin_CV_builder/static/js/787.fbe344ac.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.0657e2de.css",
-    "static/js/main.aff321c5.js"
+    "static/js/main.4978ba45.js"
   ]
 }
