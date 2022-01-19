@@ -2,6 +2,8 @@ import "./App.css";
 import ViewDoc from "./components/ViewDoc";
 import ResumeForm from "./components/ResumeForm";
 import React, { useState } from "react";
+import github from "./github.png";
+
 import {
   tempEdu,
   tempWork,
@@ -251,22 +253,27 @@ function App() {
   return (
     <div>
       <div className="webTitle">CV Builder</div>
-    <div className="App">
-      <ResumeForm
-        personSection={personState}
-        workSection={workState}
-        eduSection={eduState}
-        otherSection={otherState}
-      />
-      <ViewDoc
-        personSection={personList}
-        workSection={workLists}
-        eduSection={eduLists}
-        otherSection={otherLists}
-      />
+      <div className="App">
+        <ResumeForm
+          personSection={personState}
+          workSection={workState}
+          eduSection={eduState}
+          otherSection={otherState}
+        />
+        <ViewDoc
+          personSection={personList}
+          workSection={workLists}
+          eduSection={eduLists}
+          otherSection={otherLists}
+        />
+      </div>
+      <div>
+        {" "}
+        <a href="https://github.com/anthonydwan/odin_CV_builder/tree/main/cv-project">
+          <img class="github" src={github} alt="github"></img>
+        </a>
+      </div>
     </div>
-    </div>
-
   );
 }
 

@@ -1,9 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Kodchasan:wght@300;400;500;600;700&display=swap");
 
+html,
 body {
+  min-width: 750px;
   width: 90vw;
-  min-width: 100vh;
-  padding: 2em;
+  padding: 0 2em;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
@@ -20,7 +21,7 @@ code {
   display: flex;
   justify-content: center;
   margin: 20px;
-  font-size: 35px;
+  font-size: 50px;
   font-weight: 700;
 }
 .App {
@@ -28,6 +29,7 @@ code {
   gap: 2em;
   margin: 0 auto;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 .view--CV {
@@ -239,4 +241,17 @@ li {
 
 [data-input^="end"] {
   width: calc(650px / 2);
+}
+
+.github {
+  position: absolute;
+  height: 50px;
+  transition: all 0.25s ease-in-out;
+  margin-top: 20px;
+}
+
+.github:hover,
+.github:focus,
+.github:active {
+  transform: rotate(360deg);
 }
